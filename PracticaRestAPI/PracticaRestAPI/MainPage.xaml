@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaRestAPI.MainPage">
+
+    <StackLayout>
+        <Button x:Name="BtnConsumeApi" Text="Consultar" Clicked="BtnConsumeApi_Clicked"/>
+        <ScrollView>
+            <Editor x:Name="EdtShowResult" Placeholder="Aqui se muestra el resultado del cosumo de la API"
+                AutoSize="TextChanges" />
+        </ScrollView>
+        
+    </StackLayout>
+
+</ContentPage>
