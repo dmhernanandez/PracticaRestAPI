@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PracticaRestAPI.Continentes">
-    <ContentPage.Content>
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+            <Label Text="Información de Paises" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" Padding="0"/>
+        </Frame>
         <Picker x:Name="PiNombres"
-            Title="Seleccione el continente" 
-            SelectedIndexChanged="PiNombres_SelectedIndexChanged"/>
-    </ContentPage.Content>
+            Title="Seleccione un continente:" 
+            SelectedIndexChanged="PiNombres_SelectedIndexChanged" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title"/>
+    </StackLayout>
 </ContentPage>

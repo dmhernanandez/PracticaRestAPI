@@ -18,24 +18,28 @@ namespace PracticaRestAPI
         {
             InitializeComponent();
             PiNombres.Items.Add("Africa");
-            PiNombres.Items.Add("America");
+            PiNombres.Items.Add("América");
             PiNombres.Items.Add("Asia");
             PiNombres.Items.Add("Europa");
-            PiNombres.Items.Add("Oceania");
+            PiNombres.Items.Add("Oceanía");
         }
 
         private async void PiNombres_SelectedIndexChanged(object sender, EventArgs e)
         {
             var name = PiNombres.Items[PiNombres.SelectedIndex];
-            await DisplayAlert(name, "Item Seleccionado", "Aceptar");
+            //await DisplayAlert(name, "Item Seleccionado", "Aceptar");
 
-            if (name == "America")
+            if (name == "América")
             {
                 name = "Americas";
             }
             else if (name == "Europa")
             {
                 name = "Europe";
+            }
+            else if (name == "Oceanía")
+            {
+                name = "Oceania";
             }
             ListCountriesViewModel.url = "https://restcountries.eu/rest/v2/region/"+name;
             await Navigation.PushAsync(new CountriesPage());
