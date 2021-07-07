@@ -5,6 +5,7 @@
 
     <StackLayout>
         <Button x:Name="BtnConsumeApi" Text="Consultar" Clicked="BtnConsumeApi_Clicked"/>
+        <Button x:Name="btnContinentes" Text="Continentes" Clicked="btnContinentes_Clicked"/>
         <ScrollView>
             <Editor x:Name="EdtShowResult" Placeholder="Aqui se muestra el resultado del cosumo de la API"
                 AutoSize="TextChanges" />
