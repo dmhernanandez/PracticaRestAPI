@@ -27,8 +27,8 @@ namespace PracticaRestAPI.Vistas
         {
             base.OnAppearing();
             //Creamos una coleccion observable
-            ObservableCollection<Country> ColleccionPaises = new ObservableCollection<Country>();
-            var url = "https://restcountries.eu/rest/v2/region/oceania";
+  
+        /*    var url = "https://restcountries.eu/rest/v2/region/oceania";
             HttpClient cliente = new HttpClient();
  
 
@@ -44,10 +44,18 @@ namespace PracticaRestAPI.Vistas
                 catch (Exception e)
                 {
                     await DisplayAlert("Error", "Error "+e.Message, "Ok");
-                }
+                }*/
            
             
        
+        }
+
+        private void ListaPaises_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var viewModel = BindingContext as ListCountriesViewModel;
+            var country = e.Item as Country;
+            viewModel.HideOrShowItem(country);
+
         }
     }
 }

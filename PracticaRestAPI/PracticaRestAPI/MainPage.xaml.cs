@@ -11,11 +11,13 @@ using Newtonsoft.Json;
 
 using PracticaRestAPI.Modelo;
 using PracticaRestAPI.Vistas;
+using PracticaRestAPI.ViewModels;
 
 namespace PracticaRestAPI
 {
     public partial class MainPage : ContentPage
     {
+        public static string url;
         public MainPage()
         {
             InitializeComponent();
@@ -23,8 +25,9 @@ namespace PracticaRestAPI
 
         private async void BtnConsumeApi_Clicked(object sender, EventArgs e)
         {
-
+            ListCountriesViewModel.url= "https://restcountries.eu/rest/v2/region/oceania";
             await Navigation.PushAsync(new CountriesPage());
+          
           /*  var url= "https://restcountries.eu/rest/v2/region/oceania";
             using (HttpClient cliente=new HttpClient())
             {

@@ -1,7 +1,10 @@
-﻿using PracticaRestAPI.Modelo;
+﻿using Newtonsoft.Json;
+using PracticaRestAPI.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Text;
 
 namespace PracticaRestAPI.ViewModels
@@ -12,25 +15,33 @@ namespace PracticaRestAPI.ViewModels
         //Esta variable se utiliza para in
         private Country oldCountry;
        public ObservableCollection<Country> CountriesList { get; set; }
-       public ListCountriesViewModel()
+       public static string url;
+        public ListCountriesViewModel()
         {
-            CountriesList = new ObservableCollection<Country> {
-                new Country
-                {
-                    name="Angola",
-                    flag="https://restcountries.eu/data/ala.svg",
+            
+            HttpClient cliente = new HttpClient();
+            try
+            {
+                var respuesta = cliente.GetAsync(url).Result;
+                var json =  respuesta.Content.ReadAsStringAsync().Result;
+                var ListaPaises1 = JsonConvert.DeserializeObject<List<Country>>(json.ToString());
+                CountriesList = new ObservableCollection<Country>(ListaPaises1);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("Error", "Error " + e.Message, "Ok");
+            }
 
-                    
-                }
-             };
+
+
         }
 
         public void FillObservableCollection(List<Country> countries)
         {
-            /*foreach (Country pais in countries)
+            foreach (Country pais in countries)
             {
                 CountriesList.Add(pais);
-            }*/
+            }
         }
 
         public void HideOrShowItem(Country country)

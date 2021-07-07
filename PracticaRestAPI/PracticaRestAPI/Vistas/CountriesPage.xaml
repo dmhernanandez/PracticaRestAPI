@@ -15,25 +15,95 @@
         <ResourceDictionary>
             <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"/>
         </ResourceDictionary>
-        
     </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ListaPaises"
-                      Margin="10"
-                      ItemsSource="{Binding Country}">
+                      Margin="2" 
+                      HasUnevenRows="true"
+                      ItemTapped="ListaPaises_ItemTapped"
+                      ItemsSource="{Binding CountriesList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Frame CornerRadius="10" Padding="0" >
-                                    <ffimageloading:CachedImage  Aspect="AspectFill"
-                                                                                                          
-                                                      Source="{Binding flag, Converter={StaticResource SvgImageSourceConverter}}">
-                                    </ffimageloading:CachedImage>
-                                </Frame>
-                                <Label Text="{Binding name}"/>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <ffimageloading:CachedImage
+                                        Aspect="AspectFill"                                                    
+                                        Source="{Binding flag,
+                                        Converter={StaticResource SvgImageSourceConverter}}" WidthRequest="130" HeightRequest="65" />
+                                    <Label   Text  ="{Binding name}"    FontSize="15"      Margin="0,16,0,0"/>
+                                </StackLayout>
+                                
+                                <StackLayout Orientation="Horizontal" Padding="16" IsVisible="{Binding IsVisible}" HorizontalOptions="StartAndExpand">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Column="0"
+                                           Grid.Row="0"
+                                           Margin="1,0,10,0"
+                                           Text="Capital:"
+                                           TextColor="Black"
+                                           FontSize="15" />
+
+                                        <Label Grid.Row="0"
+                                           Grid.Column="1"
+                                           TextColor="Red"
+                                           FontSize="15"
+                                           FontAttributes="Bold"
+                                           Text="{Binding capital}" />
+                                        
+                                        <Label Grid.Column="0"
+                                           Grid.Row="1"
+                                           Margin="1,0,10,0"
+                                           Text="Población:"
+                                           TextColor="Black"
+                                           FontSize="15" />
+
+                                        <Label Grid.Row="1"
+                                           Grid.Column="1"
+                                           TextColor="Red"
+                                           FontSize="15"
+                                           FontAttributes="Bold"
+                                           Text="{Binding population}" />
+                                        <Label Grid.Row="1"
+                                           Grid.Column="2"
+                                           TextColor="Red"
+                                           FontSize="15"
+                                           FontAttributes="Bold"
+                                           Text="habitantes." />
+                                        
+                                        <Label Grid.Column="0"
+                                           Grid.Row="2"
+                                           Margin="1,0,10,0"
+                                           Text="Subregión:"
+                                           TextColor="Black"
+                                           FontSize="15" />
+                                         
+                                        <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="Red"
+                                           FontSize="15"
+                                           FontAttributes="Bold"
+                                           Text="{Binding subregion}" />
+                                        
+                                    </Grid>
+                                </StackLayout>
                             </StackLayout>
+                            <!--StackLayout Orientation="Horizontal">
+                                <ffimageloading:CachedImage
+                                        Aspect="AspectFill"                                                    
+                                        Source="{Binding flag,
+                                        Converter={StaticResource SvgImageSourceConverter}}"/>
+                                <Label Text="{Binding name}"/>
+                            </StackLayout-->
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
