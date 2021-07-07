@@ -32,6 +32,8 @@ namespace PracticaRestAPI.Modelo
         public string cioc { get; set; }
         public Boolean IsVisible { get; set; } = false;
 
+        public String iconDesplegable { get; set; } = "showMore.png";
+
         public class Currency
         {
             public string code { get; set; }

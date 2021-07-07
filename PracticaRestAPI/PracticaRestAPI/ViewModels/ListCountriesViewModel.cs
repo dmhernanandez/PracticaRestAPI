@@ -49,6 +49,14 @@ namespace PracticaRestAPI.ViewModels
             
             if(oldCountry==country)
             {
+                if (country.IsVisible)
+                {
+                    country.iconDesplegable = "showMore.png";
+                }
+                else
+                {
+                    country.iconDesplegable = "showLess.png";
+                }
                 country.IsVisible = !country.IsVisible;
                 UpdateList(country);
             }
@@ -57,11 +65,13 @@ namespace PracticaRestAPI.ViewModels
                 //Si ya hay un pais seleccionado anteriormente entonces el pais que esta seleccionado pasa a ser invisible
                 if(oldCountry!=null)
                 {
+                    oldCountry.iconDesplegable = "showMore.png";
                     oldCountry.IsVisible = false;
                     //Actualizamos la lista para que oculte el pais seleccionado 
                     UpdateList(oldCountry);
                 }
-                
+
+                country.iconDesplegable = "showLess.png";
                 country.IsVisible = true;
                 UpdateList(country);  
             }

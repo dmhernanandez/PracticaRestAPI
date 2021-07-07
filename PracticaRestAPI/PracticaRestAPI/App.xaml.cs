@@ -10,8 +10,7 @@ namespace PracticaRestAPI
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new MainPage());
-            Debug.WriteLine("hola");
+            MainPage = new NavigationPage( new Continentes());
         }
 
         protected override void OnStart()

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PracticaRestAPI.ViewModels;
+using PracticaRestAPI.Vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +24,10 @@ namespace PracticaRestAPI
             PiNombres.Items.Add("Oceania");
         }
 
-        private void PiNombres_SelectedIndexChanged(object sender, EventArgs e)
+        private async void PiNombres_SelectedIndexChanged(object sender, EventArgs e)
         {
             var name = PiNombres.Items[PiNombres.SelectedIndex];
-            DisplayAlert(name, "Item Seleccionado", "Okis");
+            await DisplayAlert(name, "Item Seleccionado", "Aceptar");
 
             if (name == "America")
             {
@@ -35,6 +37,8 @@ namespace PracticaRestAPI
             {
                 name = "Europe";
             }
+            ListCountriesViewModel.url = "https://restcountries.eu/rest/v2/region/"+name;
+            await Navigation.PushAsync(new CountriesPage());
         }
     }
 }

@@ -33,7 +33,8 @@
                                         Aspect="AspectFill"                                                    
                                         Source="{Binding flag,
                                         Converter={StaticResource SvgImageSourceConverter}}" WidthRequest="130" HeightRequest="65" />
-                                    <Label   Text  ="{Binding name}"    FontSize="15"      Margin="0,16,0,0"/>
+                                    <Label  Text  ="{Binding name}"    FontSize="15"      Margin="0,16,0,0"/>
+                                    <Image Source="{Binding iconDesplegable}" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand"/>
                                 </StackLayout>
                                 
                                 <StackLayout Orientation="Horizontal" Padding="16" IsVisible="{Binding IsVisible}" HorizontalOptions="StartAndExpand">
