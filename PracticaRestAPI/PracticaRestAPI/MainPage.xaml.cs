@@ -51,5 +51,10 @@ namespace PracticaRestAPI
                 
             }*/
         }
+
+        private async void btnContinentes_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Continentes());
+        }
     }
 }
