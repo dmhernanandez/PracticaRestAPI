@@ -4,10 +4,43 @@
              x:Class="PracticaRestAPI.Continentes">
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
-            <Label Text="Información de Paises" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" Padding="0"/>
+            <Label Text="Tarea de Rest Api Countries" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="White" 
+                   FontFamily="Quattrocento-Bold"
+                   FontSize="28" 
+                   Padding="0"/>
+           
         </Frame>
-        <Picker x:Name="PiNombres"
-            Title="Seleccione un continente:" 
-            SelectedIndexChanged="PiNombres_SelectedIndexChanged" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title"/>
+        
+        <Label Text="Para poder ver la informacion a continuación seleccione un continente"
+              FontFamily="Questrial"
+               HorizontalTextAlignment="Start"
+               FontSize="20"
+               TextColor="Black"
+               Margin="20,10"
+              />
+        <Frame CornerRadius="30"
+               HeightRequest="60"
+               WidthRequest="340"
+               HorizontalOptions="Center" 
+               Padding="0"
+               BackgroundColor="#E3E4E5">
+
+            <Picker x:Name="PiNombres"
+                        Title="Seleccione Continente:" 
+                        SelectedIndexChanged="PiNombres_SelectedIndexChanged" 
+                        FontFamily="Questrial"
+                        HorizontalOptions="Center" 
+                        FontSize="Title"/>
+        </Frame>
+
+        <Label Text="Nota: Se cargara automaticamente"
+              FontFamily="Questrial"
+               HorizontalOptions="Center" 
+               FontSize="20"
+               TextColor="Black"
+               Margin="20,10"
+              />
     </StackLayout>
 </ContentPage>

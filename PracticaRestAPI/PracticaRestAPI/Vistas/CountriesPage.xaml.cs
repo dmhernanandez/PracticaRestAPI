@@ -23,7 +23,7 @@ namespace PracticaRestAPI.Vistas
         {
             InitializeComponent();
         }
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             //Creamos una coleccion observable

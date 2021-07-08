@@ -27,7 +27,7 @@ namespace PracticaRestAPI
         private async void PiNombres_SelectedIndexChanged(object sender, EventArgs e)
         {
             var name = PiNombres.Items[PiNombres.SelectedIndex];
-            //await DisplayAlert(name, "Item Seleccionado", "Aceptar");
+        
 
             if (name == "América")
             {

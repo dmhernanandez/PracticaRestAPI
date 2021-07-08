@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\AppleGaramond-Light.ttf" />
+    <None Remove="Fonts\QuattrocentoSans-Bold.ttf" />
+    <None Remove="Fonts\Questrial-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\AppleGaramond-Light.ttf" />
+    <EmbeddedResource Include="Fonts\QuattrocentoSans-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Questrial-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
