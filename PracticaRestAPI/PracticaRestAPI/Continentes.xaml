@@ -13,7 +13,7 @@
            
         </Frame>
         
-        <Label Text="Para poder ver la informacion a continuación seleccione un continente"
+        <Label Text="Para poder ver la información a continuación seleccione un continente"
               FontFamily="Questrial"
                HorizontalTextAlignment="Start"
                FontSize="20"
@@ -35,7 +35,7 @@
                         FontSize="Title"/>
         </Frame>
 
-        <Label Text="Nota: Se cargara automaticamente"
+        <Label Text="Nota: Se cargará automáticamente"
               FontFamily="Questrial"
                HorizontalOptions="Center" 
                FontSize="20"

@@ -31,7 +31,7 @@
                    Grid.Column="1"
                    FontFamily="Quattrocento-Bold"
                    FontSize="25"
-                   Text="Nombre del Pais" />
+                   Text="Nombre del País" />
             </Grid>
             <ScrollView>
 
